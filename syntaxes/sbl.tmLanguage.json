@@ -1,0 +1,90 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Supibot Language",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#alias-names"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#JSExecStrings"
+		}
+	],
+	"repository": {
+		"alias-names": {
+			"patterns": [
+				{
+					"name": "entity.name.function.sbl",
+					"match": "[-a-zA-Z_0-9]{2,30}"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.sbl",
+					"match": "\\b(alias|end|entry|prefixed|compiled|get[\\s\\n\\r]+compiled)\\b"
+				},
+				{
+					"name": "keyword.operator.sbl",
+					"match": "\\b(exec|js|pipe|say|call)\\b"
+				},
+				{
+					"name": "emphasis.sbl",
+					"match": "\\b(get|set)\\b"
+				},
+				{
+					"name": "keyword.operator.sbl",
+					"match": "\\b(\\||->)\\b"
+				},
+				{
+					"name": "emphasis.sbl",
+					"match": "\\b\\$\\{(\\d+)((-\\d+)|\\+)|\\}\\b"
+				}
+
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.sbl",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.sbl",
+					"match": "\\\\."
+				}
+			]
+		},
+		"JSExecStrings": {
+			"name": "string.quoted.triple.sbl",
+			"contentName": "keyword.operator",
+			"begin": "\\`\\`\\`",
+			"end": "\\`\\`\\`",
+			"patterns": [
+				{
+					"name":"constant.character.escape.sbl",
+					"match": "\\\\`"
+				},
+				{
+					"include": "source.js"
+				}
+			]
+		},
+		"comments": {
+			"name":"comment.line.number-sign.sbl",
+			"begin": "#",
+			"end": "\n"
+		}
+	},
+	"fileTypes": [".sbl"],
+	"scopeName": "source.sbl",
+	"firstLineMatch": ""
+}

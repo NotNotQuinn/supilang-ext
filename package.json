@@ -1,0 +1,38 @@
+{
+    "name": "supibot-language-support",
+    "displayName": "Supibot Language Support",
+    "description": "Supibot language support",
+    "version": "0.0.1",
+    "author": "QuinnDT",
+    "publisher": "QuinnDT",
+    "icon": "images/icon.png",
+    "scripts": {
+        "code": "code --new-window --extensionDevelopmentPath=. ./test.sbl"
+    },
+    "engines": {
+        "vscode": "^1.64.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/notnotquinn/supilang-ext"
+    },
+    "homepage": "https://github.com/notnotquinn/supilang-ext",
+    "bugs": "https://github.com/notnotquinn/supilang-ext",
+    "license": "MIT",
+    "contributes": {
+        "languages": [{
+            "id": "sbl",
+            "aliases": ["Supibot Language", "SBL", "supilang"],
+            "extensions": [".sbl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "sbl",
+            "scopeName": "source.sbl",
+            "path": "./syntaxes/sbl.tmLanguage.json"
+        }]
+    }
+}
