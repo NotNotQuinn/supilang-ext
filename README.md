@@ -1,6 +1,6 @@
 # supibot-language-support README
 
-This extention provides syntax highlighting for Supibot Language (SBL) or "supilang".
+This extention provides syntax highlighting for [Supibot Language](https://github.com/NotNotQuinn/supilang) (SBL) or "supilang".
 
 <img src="./images/example.png">
 
